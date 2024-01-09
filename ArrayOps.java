@@ -1,6 +1,6 @@
 public class ArrayOps {
     public static void main(String[] args) {
-        System.out.println(isSorted(new int[] {1, 1, 500}));
+        System.out.println(secondMaxValue(new int[] {1,-2,3,-4,5}));
     }
     
     public static int findMissingInt (int [] array) {
@@ -41,14 +41,16 @@ public class ArrayOps {
         int max2 = array[0];
         for(int j =0; j< array.length; j++)
         {
-            if (array[j]>max)
-            {
-                max = array[j];
-            }
             if (max == array[j])
             {
                 twoMax = true;
+            }            
+            if (array[j]>max)
+            {
+                max = array[j];
+                twoMax = false;
             }
+
         }
         if (!twoMax)
         {
