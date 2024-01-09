@@ -36,6 +36,7 @@ public class ArrayOps {
     }
 
     public static int secondMaxValue(int [] array) {
+        boolean twoMax = false;
         int max = array[0];
         int max2 = array[0];
         for(int j =0; j< array.length; j++)
@@ -44,15 +45,24 @@ public class ArrayOps {
             {
                 max = array[j];
             }
-        }
-        for (int i = 0; i<array.length; i++)
-        {
-            if ((max2 < array[i])&&(max >= array [i]))
+            if (max == array[j])
             {
-                max2 = array[i];
+                twoMax = true;
             }
         }
+        if (!twoMax)
+        {
+            for (int i = 0; i<array.length; i++)
+            {
+                if ((max2 < array[i])&&(max > array [i]))
+                {
+                    max2 = array[i];
+                }
+            }
         return max2;
+        }
+
+        return max;
     }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
