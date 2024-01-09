@@ -47,7 +47,7 @@ public class ArrayOps {
         }
         for (int i = 0; i<array.length; i++)
         {
-            if ((max2 < array[i])&&(max > array [i]))
+            if ((max2 < array[i])&&(max >= array [i]))
             {
                 max2 = array[i];
             }
